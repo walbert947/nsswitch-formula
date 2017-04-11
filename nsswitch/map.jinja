@@ -1,0 +1,8 @@
+{% import_yaml 'nsswitch/defaults.yaml' as default_settings %}
+
+{% set nsswitch_settings = salt['pillar.get'](
+    'nsswitch',
+    default=default_settings.nsswitch,
+    merge=True
+  )
+%}
